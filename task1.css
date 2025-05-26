@@ -1,0 +1,147 @@
+* {
+   background-image:url("photo.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 30px;
+}
+.nav ul li{
+    list-style: none;
+    font-size: 20px;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 5px;
+    margin: 5px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: darkgreen;
+    transition: 0.5s;
+}
+.logo{
+    font-size: 40px;
+    color:darkgreen;
+    font-style: italic;
+}
+.logo span{
+    color: darkred;
+}
+
+.nav ul li a:hover{
+    color:crimson
+}
+.heading{
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.para{
+    font-size: 15px;
+    text-align: center;
+}
+.button-wrapper{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+   
+}
+.btn{
+    background-color: darkgreen !important ;
+    color: black !important;
+    height: 60px;
+    width: 100px;
+}
+
+
+.media-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+.media-icons a{
+    position: relative;
+    color: #111;
+    font-size: 25px;
+    transition: 0.3s;
+    transition-property: transform;
+}
+.media-icons a:not(:last-child){
+    margin-right: 60px;
+}
+.media-icons a:hover{
+    transform: scale(1.5);
+}
+label{
+    display: none;
+}
+#check{
+    z-index: 3;
+}
+/*Responsive styles*/
+@media (max-width:960px){
+    header .nav-links{
+        display: none;
+    }
+    label{
+        display:block;
+        font-size: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        transition-property: color;
+    }
+    label:hover{
+        color: #fff;
+    }
+    label .fa-solid fa-xmark{
+        display: none;
+    }
+    #check:checked ~ header .nav-links{
+        z-index: 2;
+        position: fixed;
+        background-color:lightgreen;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #check:checked~header .nav-links a{
+          font-weight: 700;
+          margin-right: 0;
+          margin-bottom: 50px;
+          letter-spacing: 2px;
+    }
+    #check:checked ~header .fa-solid fa-bars{
+        display:none;
+    }
+    #check:checked ~header .fa-solid fa-xmark{
+        z-index: 2;
+        display: block;
+        position: fixed;
+    }
+    label .fa-solid fa-bars{
+        position: absolute;
+    }
+    header logo{
+        position: absolute;
+        bottom: -6px;
+    }
+}
